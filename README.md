@@ -60,5 +60,58 @@ Copiar lo de máster: git pull origin test_1/master/main
 - git commit -m “tex” (associate cambios a un mensaje)
 - git pull origin nombre_rama_remota (evita pausar cambios de los demás)
 - git push origin natalia_1: Sube los cambios comiteados de la rama local a la remota.
+  
+  
+  
+  
+# Como resolver conflictos
+
+Cuando trabajamos con repositorios colaborativos varios usuarios podrían estar editando un mismo archivo o contenido en ramas separadas.
+
+Los conflictos surgen cuando dos personas han cambiado las mismas líneas de un archivo o si alguien ha eliminado un archivo mientras otro lo estaba modificando.
+
+La función principal de **git merge** es combinar ramas separadas y resolver las ediciones conflictivas que podrían surgir.
+
+Al realizar el git merge pueden detectarse conflictos que se deben resolver. Los conflictos solo afectan al desarrollador que realiza la fusión, el resto del equipo no se entera del conflicto.
+
+1. Ejemplo de conflicto
+## Paso 1
+
+- Crea un nuevo proyecto en Pycharm e inicializarlo como repositorio git.
+
+- Crear un nuevo archivo merge.txt con texto.
+
+- Realizar el git add . y git commit de los cambios.
+
+
+## Paso 2
+
+- Crear nueva rama (rama_1)
+
+- Modificar el texto del archivo merge.txt.
+
+- Confirma el nuevo contenido (git add . + git commit)
+  
+
+## Paso 3
+
+- Volver a master
+
+- Editar contenido en merge.txt
+
+- Confirmarlo (git add . + git commit)
+
+
+ ## Paso 4
+
+- Posicionarse en master (git checkout master)
+
+- Hacer el merge de la rama creada (git merge rama_1).
+  
+  
+  
+### Cuando trabajamos con repositorios remotos: 
+
+Si estamos trabajando en una rama propia, antes de hacer un PR para megear a main/master, se recomienda traer los cambios git pull origin main y resolver los conflictos de forma local.  
 
 
